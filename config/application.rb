@@ -40,3 +40,14 @@ module PaginationApp
     config.generators.system_tests = nil
   end
 end
+
+module PostBootstrapApp
+  class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 7.0
+    # ***** 以下を追加 *****
+    config.i18n.default_locale = :ja
+    config.active_record.default_timezone = :local
+    config.time_zone = "Asia/Tokyo"
+  end
+end
